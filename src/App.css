@@ -1,0 +1,82 @@
+:root {
+  --sand:#e9d9b4
+}
+@font-face {
+  font-family: 'Castorgate - Rough';
+  src: url('./fonts/Castorgate-Rough.woff2') format('woff2'),
+    url('./fonts/Castorgate-Rough.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rockwell';
+  src: url('./fonts/Rockwell.woff2') format('woff2'),
+      url('./fonts/Rockwell.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rockwell';
+  src: url('./fonts/Rockwell-Bold.woff2') format('woff2'),
+      url('./fonts/Rockwell-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+}
+/* .ant-typography >a{
+  font-size: 14px!important;
+} */
+
+body {
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2{
+  font-family: 'Castorgate - Rough', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+h3, h4, h5, h6, p, div, body {
+  font-family: 'Rockwell', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+  
+/* #components-layout-demo-top-side .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0; 
+ } 
+
+.ant-row-rtl #components-layout-demo-top-side .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+section.site-layout-background {
+  background: rgba(240, 242, 245, .55);
+} 
+
+.ant-layout {
+  background-color: transparent;
+}
+img{
+  max-height:100%; max-width:100%;
+} */
+
+.identicon{
+  margin: auto;
+}
+/*  */
