@@ -71,7 +71,6 @@ console.log("📦 Assets: ", assets);
 
 /// 📡 What chain are your contracts deployed to?
 const targetNetwork = NETWORKS.mainnet; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
-targetNetwork.name= "homestead"
 // 😬 Sorry for all the console logging
 const DEBUG = false;
 
@@ -116,7 +115,7 @@ const blockExplorer = targetNetwork.blockExplorer;
   Web3 modal helps us "connect" external wallets:
 */
 const web3Modal = new Web3Modal({
-  network: "homestead", // optional
+  // network: "homestead", // optional
   cacheProvider: true, // optional
   providerOptions: {
     walletconnect: {
@@ -214,7 +213,7 @@ function App(props) {
     if (
       injectedProvider &&
       injectedProvider.networks &&
-      injectedProvider.networks.name === targetNetwork.name &&
+      ((injectedProvider.networks.name === targetNetwork.name) || (injectedProvider.networks.name === "homestead" )) &&
       readContracts.Crabrades &&
       !mintPrice
     )
@@ -311,7 +310,7 @@ function App(props) {
     loadWeb3Modal();
   }, []);
   useEffect(() => {
-    if (injectedProvider && injectedProvider.network && injectedProvider.network.name !== targetNetwork.name) {
+    if (injectedProvider && injectedProvider.network && (injectedProvider.network.name !== targetNetwork.name && injectedProvider.network.name !== "homestead")) {
       setNetworkDisplay(
         <div style={{ zIndex: 2, position: "absolute", right: 0, top: 60, padding: 16 }}>
           <Alert

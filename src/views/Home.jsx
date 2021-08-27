@@ -179,7 +179,7 @@ export default ({ supply, mintAmount, setMintAmount, gasPrice, tx, writeContract
                   <div className="justify-start card-actions">
                     <h3>Mint Price: {"0.02 ETH"}</h3>
                   </div>
-                  <div className="justify-end card-actions">
+                  <div className="mt-1">
                     <div tabIndex={0}>
                       <button
                         onClick={() => {
