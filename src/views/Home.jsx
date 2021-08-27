@@ -67,7 +67,7 @@ export default ({ supply, mintAmount, setMintAmount, gasPrice, tx, writeContract
               className="flex items-center w-full grid-flow-row grid-cols-6 md:grid-cols-8 gap-4 px-10 pt-1 pb-10 overflow-x-scroll overflow-y-hidden xl:px-4 xl:overflow-x-hidden xl:overflow-x-auto "
             >
               {/* <div className="overflow-visible shadow-xl card bg-base-100  flex-shrink-0 col-span-9 row-span-4 mx-2 xl:mx-0 w-auto"> */}
-                {/* <div className="card-body">
+              {/* <div className="card-body">
                   <div className="flex items-center font-extrabold card-title">
                     Crabrade Minting!
                     <div className="dropdown dropdown-top dropdown-end">
@@ -146,53 +146,53 @@ export default ({ supply, mintAmount, setMintAmount, gasPrice, tx, writeContract
                 </div> */}
               {/* </div> */}
               {/* <div className="overflow-visible shadow-xl card bg-base-100 flex-shrink-0 col-span-6 md:col-span-8  row-span-4 mx-2 xl:mx-0 w-72 xl:w-auto"> */}
-                <div className="card-body">
-                  <div className="flex items-center font-extrabold card-title">Crabrade Minting!</div>{" "}
-                  <div className="w-full">
-                    <div tabIndex={0}>
-                      <div className="p-10 card bg-base-200">
-                        <div className="form-control">
-                          <label className="label">
-                            <span className="label-text">Amount</span>
-                          </label>
-                          <input
-                            type="text"
-                            value={mintAmount}
-                            onChange={e => setMintAmount(e.target.value)}
-                            className="input"
-                          />
-                        </div>
+              <div className="card-body">
+                <div className="flex items-center font-extrabold card-title">Crabrade Minting!</div>{" "}
+                <div className="w-full">
+                  <div tabIndex={0}>
+                    <div className="p-10 card bg-base-200">
+                      <div className="form-control">
+                        <label className="label">
+                          <span className="label-text">Amount</span>
+                        </label>
+                        <input
+                          type="text"
+                          value={mintAmount}
+                          onChange={e => setMintAmount(e.target.value)}
+                          className="input"
+                        />
                       </div>
-                    </div>{" "}
-                    <input
-                      type="range"
-                      min={1}
-                      max={50}
-                      value={mintAmount}
-                      onChange={e => setMintAmount(e.target.value)}
-                      className="range"
-                    />
+                    </div>
                   </div>{" "}
-                  <p className="text-sm text-base-content text-opacity-80">
-                    You can mint up to 50 CRABs per transaction!
-                  </p>{" "}
-                  <div className="justify-start card-actions">
-                    <h3>Mint Price: {"0.02 ETH"}</h3>
-                  </div>
-                  <div className="mt-1">
-                    <div tabIndex={0}>
-                      <button
-                        onClick={() => {
-                          console.log("gasPrice,", gasPrice);
-                          tx(writeContracts.Crabrades.adopt(mintAmount, { value: parseEther("" + mintAmount * 0.02) }));
-                        }}
-                        className="btn btn-primary"
-                      >
-                        Mint!
-                      </button>
-                    </div>{" "}
-                  </div>
+                  <input
+                    type="range"
+                    min={1}
+                    max={50}
+                    value={mintAmount}
+                    onChange={e => setMintAmount(e.target.value)}
+                    className="range"
+                  />
+                </div>{" "}
+                <p className="text-sm text-base-content text-opacity-80">
+                  You can mint up to 50 CRABs per transaction!
+                </p>{" "}
+                <div className="justify-start card-actions">
+                  <h3>Mint Price: {"0.02 ETH"}</h3>
                 </div>
+                <div className="mt-1">
+                  <div tabIndex={0}>
+                    <button
+                      onClick={() => {
+                        console.log("gasPrice,", gasPrice);
+                        tx(writeContracts.Crabrades.adopt(mintAmount, { value: parseEther("" + mintAmount * 0.02) }));
+                      }}
+                      className="btn btn-primary"
+                    >
+                      Mint!
+                    </button>
+                  </div>{" "}
+                </div>
+              </div>
               {/* </div> */}
               {/* <div className="card overflow-visible shadow-lg bg-base-100 flex-shrink-0 col-span-3 row-span-1 mx-2 xl:mx-0 w-72 xl:w-auto xl:place-self-stretch">
                 <div className="grid gap-4 flex-shrink-0 col-span-3 row-span-1 mx-2 xl:mx-0 w-72 xl:w-auto">
@@ -370,6 +370,16 @@ export default ({ supply, mintAmount, setMintAmount, gasPrice, tx, writeContract
         <div className="flex justify-center w-full mt-6">
           <a href="https://opensea.io/collection/crabrades" target="_blank" className="btn btn-primary btn-wide">
             Crabrades on Opensea
+          </a>
+        </div>
+        <div className="flex justify-center w-full mt-6">
+          <h4> Verified Contract:  </h4>
+          <a
+            href="https://etherscan.io/address/0x280ecba1194ae1500ddad4a5f4a7e8270066146a#code"
+            target="_blank"
+            className=""
+          >
+            0x280eCBa1194AE1500dDAD4a5F4a7e8270066146A
           </a>
         </div>
       </div>
@@ -578,9 +588,9 @@ export default ({ supply, mintAmount, setMintAmount, gasPrice, tx, writeContract
           <div className="md:scale-90 container pb-40 mx-auto px-4 md:px-12" />
         </div>
       </section> */}
-      <footer style={{background:"rgb(233, 217, 180)"}} className="p-10 footer text-primary-content footer-center">
+      <footer style={{ background: "rgb(233, 217, 180)" }} className="p-10 footer text-primary-content footer-center">
         <div>
-          <img style={{height:"200px", width:"auto"}} src="/img/crabradeslogoglow.png" />
+          <img style={{ height: "200px", width: "auto" }} src="/img/crabradeslogoglow.png" />
           <p className="font-bold">Crabrades</p>
           <p>Copyright © 2021 - All right reserved</p>
         </div>
