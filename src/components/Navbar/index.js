@@ -111,7 +111,7 @@ export const ReactNavbar = ({ color, logo, menu, social, sticky, account }) => {
                       {socialIcon.map((icon, i) => (
                         <li key={i}>
                           <a target="_blank" href={icon.url}>
-                            <FontAwesomeIcon icon={icon.icon} />
+                            <FontAwesomeIcon color={"rgb(216, 79, 69)"} icon={icon.icon} />
                           </a>
                           <span className={"tooltiptext"}>{icon.name}</span>
                         </li>

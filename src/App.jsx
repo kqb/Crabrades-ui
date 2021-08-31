@@ -2,19 +2,19 @@ import { LinkOutlined } from "@ant-design/icons";
 import { StaticJsonRpcProvider, Web3Provider } from "@ethersproject/providers";
 import { formatEther, parseEther } from "@ethersproject/units";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { Alert, Button, Card, Col, Input, List, Menu, Row } from "antd";
+import { Alert, Button, Card, List } from "antd";
 import "antd/dist/antd.css";
 import { useUserAddress } from "eth-hooks";
 import { utils } from "ethers";
 import React, { useCallback, useEffect, useState } from "react";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
 
 import assets from "./assets.js";
-import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp, Navbar } from "./components";
+import { Address, Contract, Navbar } from "./components";
 import { Home, MyCrabs, Gallery } from "./views";
-import { DAI_ABI, DAI_ADDRESS, INFURA_ID, NETWORK, NETWORKS } from "./constants";
+import { INFURA_ID, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import axios from "axios";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -23,11 +23,7 @@ import {
   useContractLoader,
   useContractReader,
   useEventListener,
-  useExchangePrice,
-  useExternalContractLoader,
   useGasPrice,
-  useOnBlock,
-  useinjectedProvider,
 } from "./hooks";
 
 const nftImg = ({ image }) => (
@@ -172,20 +168,6 @@ function App(props) {
   // If you want to make 🔐 write transactions to your contracts, use the injectedProvider:
   const writeContracts = useContractLoader(injectedProvider);
 
-  // EXTERNAL CONTRACT EXAMPLE:
-  //
-  // If you want to bring in the mainnet DAI contract it would look like:
-  // const mainnetDAIContract = useExternalContractLoader(injectedProvider, DAI_ADDRESS, DAI_ABI);
-
-  // If you want to call a function on a new block
-  // useOnBlock(injectedProvider, () => {
-  //   console.log(`⛓ A new mainnet block is here: ${injectedProvider._lastBlockNumber}`);
-  // });
-
-  // Then read your DAI balance like:
-  // const myMainnetDAIBalance = useContractReader({ DAI: mainnetDAIContract }, "DAI", "balanceOf", [
-  //   "0x34aA3F359A9D614239015126635CE7732c18fDF3",
-  // ]);
 
   // keep track of a variable from the contract in the local React state:
   const balance = useContractReader(readContracts, "Crabrades", "balanceOf", [address]);
@@ -257,11 +239,6 @@ function App(props) {
     };
     updateCrabrades();
   }, [address, yourBalance]);
-
-  /*
-  const addressFromENS = useResolveName(injectedProvider, "austingriffith.eth");
-  console.log("🏷 Resolved austingriffith.eth as:",addressFromENS)
-  */
 
   //
   // 🧫 DEBUG 👨🏻‍🔬
@@ -365,17 +342,9 @@ function App(props) {
     );
   }
 
-  // const [sending, setSending] = useState();
-  // const [ipfsHash, setIpfsHash] = useState();
-  // const [ipfsDownHash, setIpfsDownHash] = useState();
-
-  // const [downloading, setDownloading] = useState();
-  // const [ipfsContent, setIpfsContent] = useState();
 
   const [transferToAddresses, setTransferToAddresses] = useState({});
-
   const [loadedAssets, setLoadedAssets] = useState();
-  // const [mintPrice, setMintPrice] = useState();
 
   useEffect(() => {
     const updateCrabrades = async () => {
@@ -475,28 +444,7 @@ function App(props) {
         />
         <Switch>
           <Route exact path="/">
-
             <Home {...{ supply, mintAmount, setMintAmount,gasPrice,tx,writeContracts,parseEther }} />
-            {/* <div>
-              <div>
-                <h3>Mint Price: {mintPrice ? mintPrice : ""}</h3>
-                <ClipLoader size={50} color={"red"} loading={!!!mintPrice} speedMultiplier={1.5} />
-              </div>
-
-              <Button
-                onClick={() => {
-                  console.log("gasPrice,", gasPrice);
-                  tx(writeContracts.Crabrades.adopt(1, { value: parseEther(mintPrice) }));
-                }}
-              >
-                Mint
-              </Button>
-              <div style={{ maxWidth: 820, margin: "auto", marginTop: 32, paddingBottom: 256 }}>
-                <StackGrid columnWidth={200} gutterWidth={16} gutterHeight={16}>
-                  {galleryList}
-                </StackGrid>
-              </div>
-            </div> */}
           </Route>
           <Route exact path="/gallery">
             <Gallery {...{ galleryList }} />
@@ -554,45 +502,6 @@ function App(props) {
           )}
         </Switch>
       </BrowserRouter>
-
-      {/* <ThemeSwitch /> */}
-
-      {/* 🗺 Extra UI like gas price, eth price, faucet, and support: */}
-      {/* <div style={{ position: "fixed", textAlign: "left", left: 0, bottom: 20, padding: 10 }}>
-        <Row align="middle" gutter={[4, 4]}>
-          <Col span={8}>
-            <Ramp price={price} address={address} networks={NETWORKS} />
-          </Col>
-
-          <Col span={8} style={{ textAlign: "center", opacity: 0.8 }}>
-            <GasGauge gasPrice={gasPrice} />
-          </Col>
-          <Col span={8} style={{ textAlign: "center", opacity: 1 }}>
-            <Button
-              onClick={() => {
-                window.open("https://t.me/joinchat/KByvmRe5wkR-8F_zz6AjpA");
-              }}
-              size="large"
-              shape="round"
-            >
-              <span style={{ marginRight: 8 }} role="img" aria-label="support">
-                💬
-              </span>
-              Support
-            </Button>
-          </Col>
-        </Row>
-
-        <Row align="middle" gutter={[4, 4]}>
-          <Col span={24}>
-            {faucetAvailable ? (
-              <Faucet injectedProvider={injectedProvider} price={price} ensProvider={injectedProvider} />
-            ) : (
-              ""
-            )}
-          </Col>
-        </Row>
-      </div> */}
     </div>
   );
 }

@@ -59,14 +59,14 @@ export default function Account({
     if (web3Modal.cachedProvider) {
       setConnected(true);
       modalButtons.push(
-        <button className="btn btn-sm" onClick={logoutOfWeb3Modal}>
+        <button className="btn btn-secondary btn-sm" onClick={logoutOfWeb3Modal}>
           Logout
         </button>,
       );
     } else {
       setConnected(false);
       modalButtons.push(
-        <button className="btn btn-sm" onClick={loadWeb3Modal}>
+        <button className="btn btn-secondary  btn-sm" onClick={loadWeb3Modal}>
           Web3 Connect
         </button>,
       );
@@ -81,7 +81,7 @@ export default function Account({
     <>
       {networkDisplay}
 
-      {address ? <Address address={address} ensProvider={mainnetProvider} blockExplorer={blockExplorer} /> : <button class="btn btn-sm btn-circle loading"> </button>}
+      {address ? <Address address={address} ensProvider={mainnetProvider} blockExplorer={blockExplorer} /> : <button class="btn btn-sm btn-secondary btn-circle loading"> </button>}
       {price && <Balance address={address} provider={localProvider} price={price} />}
     </>
   );
