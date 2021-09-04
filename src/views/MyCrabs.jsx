@@ -25,7 +25,7 @@ export default ({
                 <Card
                   title={
                     <div>
-                      <span style={{ fontSize: 16, marginRight: 8 }}>#{id}</span> {item.name}
+                      <span style={{ fontSize: 16, marginRight: 8 }}></span> {item.name}
                     </div>
                   }
                 >

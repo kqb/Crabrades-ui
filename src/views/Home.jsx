@@ -27,7 +27,6 @@ export default ({ supply, mintAmount, setMintAmount, gasPrice, tx, writeContract
           </div>
         </div>
       </div>
-      ;
       <div className="relative z-10">
         <div className="pt-10 pb-20 hero bg-gradient-to-br from-base-100 to-base-300 text-base-content">
           <div className="grid max-w-screen-sm max-w-screen-xl gap-4 mb-48 -mt-48 xl:pb-0 bg-opacity-60 glass xl:rounded-box text-base-content">
@@ -328,7 +327,7 @@ export default ({ supply, mintAmount, setMintAmount, gasPrice, tx, writeContract
           {/* <div className="overflow-hidden">
             <div
               style={{ backgroundImage: "url('img/crab.png')", opacity: "0.1" }}
-              className="rounded-full  bg-center -mt-96 xl:mt-0 bg-primary w-96 h-96 bg-opacity-20"
+              className="rounded-full  bg-center -mt-96 xl:mt-0 bg-primary  h-96 bg-opacity-20"
             >
             </div>
           </div> */}
@@ -475,7 +474,7 @@ export default ({ supply, mintAmount, setMintAmount, gasPrice, tx, writeContract
           </div>
         </div>
       </div>
-      {/* <section id="faq" className="relative overflow-hidden  z-10 bg-gradient-to-br from-primary to-secondary">
+      <section id="faq" className="relative overflow-hidden  z-10 bg-gradient-to-br from-primary to-secondary">
         <div className="z-10 min-h-screen text-primary-content">
           <div className="mx-auto py-20 flex-col w-full text-center md:max-w-2xl">
             <div className="w-full">
@@ -485,91 +484,68 @@ export default ({ supply, mintAmount, setMintAmount, gasPrice, tx, writeContract
           <div className="text-black md:scale-90 container pb-40 mx-auto px-4 md:px-12">
             <div className="card glass lg:card-side text-neutral-content">
               <div className=" card-body">
-                <ul className="accordion list-reset mb-0 text-black">
-                  <li className="is-active">
-                    <div className="accordion-header  text-xl font-extrabold mb-2">
-                      <span className="h6 m-0">Why is this rug-proof?</span>
-                      <div className="accordion-icon" />
-                    </div>
-                    <div className="accordion-content mb-2" style={{ maxHeight: "44px" }}>
-                      <div className="   mb-4 text-lg ">Ownership renounced and liquidity is locked via Unicrypt.</div>
-                    </div>
-                  </li>
-                  <li className>
-                    <div className="accordion-header  text-xl font-extrabold mb-2">
-                      <span className="h6 m-0">How are charities decided?</span>
-                      <div className="accordion-icon" />
-                    </div>
-                    <div className="accordion-content mb-2">
-                      <div className="   mb-4 text-lg ">
-                        <h2>
-                          To start, we’re working alongside several charities to onboard them onto The Giving Block in
-                          order to receive donations in cryptocurrencies.{" "}
-                        </h2>{" "}
-                        <br />
-                        <h2>
-                          As the project grows, we plan to implement a voting feature for all holders and feel free to
-                          recommend causes to us through any of our social media channels.
-                        </h2>
-                      </div>
-                    </div>
-                  </li>
-                  <li className>
-                    <div className="accordion-header  text-xl font-extrabold mb-2">
-                      <span className="h6 m-0">Men are victims too, don't you care about them?</span>
-                      <div className="accordion-icon" />
-                    </div>
-                    <div className="accordion-content mb-2">
-                      <div className="   mb-4 text-lg ">
-                        <h2>Yes, men are also victims of domestic violence and that is unacceptable.</h2>
-                        <br />
-                        <h2>
-                          The major challenges facing male victims of domestic abuse are social stigma and double
-                          standards in law enforcement.
-                        </h2>
-                        <br />
-                        <h2>We believe these issues are best addressed through awareness and empathy.</h2>
-                        <br />
-                        <h2>
-                          Women are disproportionately victims of domestic violence, and in many communities women face
-                          a different standard of property ownership, rendering them economic hostages in their own
-                          homes.
-                        </h2>
-                        <br />
-                        <h2>
-                          We believe we can best address these issues by providing these marginalized women with some
-                          sort of safety net and safe haven.
-                        </h2>
-                        <br />
-                        <h2>Niceguys allocates donations to causes that work to help victims of all genders.</h2>
-                      </div>
-                    </div>
-                  </li>
-                  <li className>
-                    <div className="accordion-header  text-xl font-extrabold mb-2">
-                      <span className="h6 m-0">Is this a charity or utility token?</span>
-                      <div className="accordion-icon" />
-                    </div>
-                    <div className="accordion-content mb-2">
-                      <div className="   mb-4 text-lg ">It's a utility token, but a socially responsible one. </div>
-                    </div>
-                  </li>
-                  <li className>
-                    <div className="accordion-header  text-xl font-extrabold mb-2">
-                      <span className="h6 m-0">What is the token address?</span>
-                      <div className="accordion-icon" />
-                    </div>
-                    <div className="accordion-content mb-2">
-                      <div className="   mb-4 text-lg ">0x0cbedf181b230005216e3665eb9e521358939390</div>
-                    </div>
-                  </li>
-                </ul>
+                <div tabindex="0" class="collapse  border rounded-box border-base-300 collapse-arrow">
+                  <div class="collapse-title text-xl font-medium">No bonding curve?</div>
+                  <div class="collapse-content">
+                    <p>
+                      We want everyone to have a chance to snag a crab at an equal price. Crabkind is all about equality
+                      among crabs.
+                      {/* <span class="badge badge-outline">collapse-open</span> and
+                      <span class="badge badge-outline">collapse-close</span> classes. */}
+                    </p>
+                  </div>
+                </div>
+                <div tabindex="0" class="collapse  border rounded-box border-base-300 collapse-arrow">
+                  <div class="collapse-title text-xl font-medium">Why crabs?</div>
+                  <div class="collapse-content">
+                    <p>
+                      Crabs are clawesome! All things will one day become crab. But seriously, we love crabs, we want
+                      everyone to share in our love for crabs and elevate the crab image in the defi space.
+                    </p>
+                  </div>
+                </div>
+                <div tabindex="0" class="collapse  border rounded-box border-base-300 collapse-arrow">
+                  <div class="collapse-title text-xl font-medium">Can I breed them?</div>
+                  <div class="collapse-content">
+                    <p>
+                      Our initial plan wasn't to incorporate breeding, however if this feature is desirable we can
+                      consider it in the extension of this project.
+                    </p>
+                  </div>
+                </div>
+                <div tabindex="0" class="collapse  border rounded-box border-base-300 collapse-arrow">
+                  <div class="collapse-title text-xl font-medium">How many are there?</div>
+                  <div class="collapse-content">
+                    <p>
+                      9,999 Decadent Decapods! Of those 35 of set aside. 28 are for giveaways and competitions, and 7 as
+                      crabulous gifts to special people who helped make this happen.
+                    </p>
+                  </div>
+                </div>
+                <div tabindex="0" class="collapse  border rounded-box border-base-300 collapse-arrow">
+                  <div class="collapse-title text-xl font-medium">Any future use for them?</div>
+                  <div class="collapse-content">
+                    <p>
+                      We plan on having a playground for crabs and other nifty ways to hang out with your fellow
+                      crabrades! We love feedback and want to build a crabmunity.
+                    </p>
+                  </div>
+                </div>
+                <div tabindex="0" class="collapse  border rounded-box border-base-300 collapse-arrow">
+                  <div class="collapse-title text-xl font-medium">Rarity scale?</div>
+                  <div class="collapse-content">
+                    <p>
+                      One of the earliest things on our roadmap is implementing a rarity scale for our cute crabs! We
+                      can expect this soon after mint launch.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="md:scale-90 container pb-40 mx-auto px-4 md:px-12" />
         </div>
-      </section> */}
+      </section>
       <footer style={{ background: "rgb(233, 217, 180)" }} className="p-10 footer text-primary-content footer-center">
         <div>
           <img style={{ height: "200px", width: "auto" }} src="/img/crabradeslogoglow.png" />
